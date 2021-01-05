@@ -1,0 +1,54 @@
+@mixin setInput(
+  $width: 100px,
+  $height: 20px,
+  $radius: 15px,
+  $border-color: black
+) {
+  display: block;
+  width: $width;
+  height: $height;
+  padding-left: 2.5rem;
+  border-width: 1px;
+  border-radius: $radius;
+  border-color: $border-color;
+}
+
+@mixin setButton(
+  $width: 100px,
+  $height: 20px,
+  $color: transparent,
+  $border-radius: 15px
+) {
+  display: block;
+  width: $width;
+  height: $height;
+  border: 0;
+  border-radius: $border-radius;
+  background-color: $color;
+  cursor: pointer;
+
+  &:hover {
+    opacity: 0.855;
+  }
+  &:active {
+    background-color: darken($color, 10%);
+  }
+  &:focus {
+    outline: 0;
+  }
+}
+
+@mixin setBackgroundImage() {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: no-repeat url('./imgs/login-backgroundImg.jpeg');
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transform: scale(1.3333);
+  filter: blur(8.6px);
+}
